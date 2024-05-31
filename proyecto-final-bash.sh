@@ -24,7 +24,7 @@ function show_filesystems() {
 
 function show_largest_file() {
     read -p "Ingrese la ruta del disco o filesystem: " path
-    mount_point=$(df -h | grep "$path" | awk '{print $NF}')
+    mount_point=$(df -h | grep "$path" | awk '{print $6}')
     echo "$mount_point"
     find "$mount_point" -xdev -type f -exec ls -s {} + 2>/dev/null | sort -n -r | head -n 1
 }
