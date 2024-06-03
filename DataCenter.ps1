@@ -21,7 +21,7 @@ function Menu {
 
 <#
 .SYNOPSIS
-Desplegar los cinco procesos que más CPU estén consumiendo en ese momento.
+1. Desplegar los cinco procesos que más CPU estén consumiendo en ese momento.
 #>
 function Show-TopCpuProcesses {
     Get-Process | Sort-Object CPU -Descending | Select-Object -First 5 | Format-Table -Property Id, ProcessName, CPU
@@ -29,7 +29,7 @@ function Show-TopCpuProcesses {
 
 <#
 .SYNOPSIS
-Desplegar los filesystems o discos conectados a la máquina. Incluir para cada disco su tamaño y la cantidad de espacio libre (en bytes).
+2. Desplegar los filesystems o discos conectados a la máquina. Incluir para cada disco su tamaño y la cantidad de espacio libre (en bytes).
 #>
 function Show-Filesystems {
     Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" | Select-Object DeviceID, @{n='Total Size (Bytes)'; e={$_.Size}}, @{n='Free Space (Bytes)'; e={$_.FreeSpace}}
@@ -37,7 +37,7 @@ function Show-Filesystems {
 
 <#
 .SYNOPSIS
-Desplegar el nombre y el tamaño del archivo más grande almacenado en un disco o filesystem especificado.
+3. Desplegar el nombre y el tamaño del archivo más grande almacenado en un disco o filesystem especificado.
 .PARAMETER Path
 Ruta del disco o filesystem a inspeccionar.
 #>
@@ -55,27 +55,30 @@ function Show-LargestFile {
 
 <#
 .SYNOPSIS
-Mostrar la cantidad de memoria libre y la cantidad de espacio de swap en uso (en bytes y porcentaje).
+4. Cantidad de memoria libre y la cantidad de espacio de swap en uso (en bytes y porcentaje).
 #>
 function Show-MemoryAndSwap {
     $memInfo = Get-CimInstance -ClassName Win32_OperatingSystem
     $freeMemoryBytes = $memInfo.FreePhysicalMemory * 1KB
+    $totalMemoryBytes = $memInfo.TotalVisibleMemorySize * 1KB
+    $freeMemoryPct = [math]::round(($freeMemoryBytes / $totalMemoryBytes) * 100, 2)
     $swapTotalBytes = $memInfo.TotalVirtualMemorySize * 1KB
     $swapInUseBytes = ($memInfo.TotalVirtualMemorySize - $memInfo.FreeVirtualMemory) * 1KB
     $swapInUsePct = [math]::round(($swapInUseBytes / $swapTotalBytes) * 100, 2)
     
     $output = [PSCustomObject]@{
         "Memoria libre (Bytes)" = $freeMemoryBytes
+        "Memoria libre (%)" = "$freeMemoryPct`%"
         "Swap en uso (Bytes)" = $swapInUseBytes
         "Swap en uso (%)" = "$swapInUsePct`%"
     }
-    $output | Format-Table -AutoSize
+    $output | Format-Table
 }
 
 
 <#
 .SYNOPSIS
-Mostrar el número de conexiones de red activas actualmente (en estado ESTABLISHED), también sus detalles si el usuario lo solicita.
+5. Número de conexiones de red activas actualmente (en estado ESTABLISHED), también sus detalles si el usuario lo solicita.
 #>
 function Show-NetworkConnections {
     $connections = Get-NetTCPConnection -State Established
