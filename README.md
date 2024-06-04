@@ -1,9 +1,9 @@
 # Proyecto final Sistemas Operativos - DataCenter
-Profesor: Juan Manuel Madrid Molina
+- Profesor: Juan Manuel Madrid Molina
 
-Estudiantes: Luisa Castaño, Santiago Barraza, Juan Yustes
+- Estudiantes: Luisa Castaño, Santiago Barraza, Juan Yustes
 
-Periodo: 2024 - 1
+- Periodo: 2024 - 1
 
 # ¿Qué se va a hacer?
 
