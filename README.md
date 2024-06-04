@@ -21,9 +21,9 @@ completa.
 4.  Cantidad de memoria libre y cantidad del espacio de swap en uso (en bytes y porcentaje). 
 5.  Número de conexiones de red activas actualmente (en estado ESTABLISHED).
 
-# Ejemplos
+# Ejemplos en BASH y Powershell
 
-- Menú desplegado:
+- Menú desplegado (Mismo en ambos):
 ```
 ===================
  Menu de Opciones 
@@ -38,6 +38,8 @@ Seleccione una opción:
 ```
 
 - Procesos que más CPU estén consumiendo:
+
+Bash:
 ```
 PID        COMMAND              %CPU      
 1785       firefox              22.9      
@@ -46,8 +48,20 @@ PID        COMMAND              %CPU
 1          systemd              0.9       
 1843       Privileged           Cont      
 ```
+Powershell:
+```
+   Id ProcessName           CPU
+   -- -----------           ---
+19172 VirtualBoxVM   1069.84375
+ 7100 powershell_ise 677.015625
+20364 msedge         305.765625
+13344 msedge         224.359375
+ 4048 msedge         213.921875
+```
 
 - Los filesystems en la máquina:
+
+Bash:
 ```
 Filesystem                     Tamaño              Espacio Libre       
 udev                           2090061824           2090061824          
@@ -59,22 +73,44 @@ tmpfs                          2121576448           2121576448
 tmpfs                          424316928            424304640           
 /dev/sr0                       53526528             0                   
 ```
+Powershell:
+```
+C:             254771793920         5824532480
+```
 
 - Archivo más grande almacenado en un filesystem especificado:
+
+Bash:
 ```
 Ingrese el nombre del filesystem: yus
 Nombre del archivo                                                                                   Tamaño             
 /media/yus/VBox_GAs_7.0.14/VBoxWindowsAdditions-amd64.exe                                            15395       
 ```
+Powershell:
+```
+FullName                                                                 Length
+--------                                                                 ------
+C:\Users\yuste\VirtualBox VMs\DEVASC-LABVM\DEVASC-LABVM-disk001.vdi 13139705856
+```
 
 - Cantidad de memoria libre:
+
+Bash:
 ```
 Descripción         Cantidad             Porcentaje          
 Memoria libre        2585600000 Bytes     60%                 
-Swap en uso          0 Bytes              0%                  
+Swap en uso          0 Bytes              0%               
+```
+Powershell:
+```
+Memoria libre (Bytes) Memoria libre (%) Swap en uso (Bytes) Swap en uso (%)
+--------------------- ----------------- ------------------- ---------------
+           1002098688 12.58%                    16366780416 84.43%         
 ```
 
 - Número de conexiones de red:
+
+Bash:
 ```
 Descripción         Cantidad            
 Conexiones activas   310                 
@@ -95,4 +131,41 @@ unix  3      [ ]         FLUJO      CONECTADO     22605
 unix  3      [ ]         FLUJO      CONECTADO     20001    @/tmp/dbus-LkpiPQY5JD
 unix  3      [ ]         FLUJO      CONECTADO     18322    /var/run/dbus/system_bus_socket
 ...
+```
+Powershell:
+```
+Número de conexiones en estado ESTABLISHED: 29
+¿Quieres ver los detalles de las conexiones? (s/n): s
+
+LocalAddress LocalPort RemoteAddress   RemotePort       State
+------------ --------- -------------   ----------       -----
+192.168.1.16     65527 163.70.152.60          443 Established
+192.168.1.16     65517 2.19.172.17            443 Established
+192.168.1.16     64945 20.10.31.115           443 Established
+192.168.1.16     64523 20.10.31.115           443 Established
+192.168.1.16     50832 140.82.112.22          443 Established
+192.168.1.16     50831 140.82.113.6           443 Established
+192.168.1.16     50828 163.70.152.35          443 Established
+192.168.1.16     50823 163.70.152.174         443 Established
+192.168.1.16     50821 34.149.100.209         443 Established
+192.168.1.16     50820 34.107.243.93          443 Established
+192.168.1.16     50819 34.107.243.93          443 Established
+192.168.1.16     50813 163.70.152.63          443 Established
+192.168.1.16     50812 163.70.152.63          443 Established
+192.168.1.16     50798 140.82.114.25          443 Established
+192.168.1.16     50756 163.70.152.63          443 Established
+192.168.1.16     50740 163.70.152.63          443 Established
+192.168.1.16     50736 140.82.114.26          443 Established
+192.168.1.16     50722 173.194.216.188       5228 Established
+192.168.1.16     50699 163.70.152.63          443 Established
+192.168.1.16     50441 163.70.152.21          443 Established
+192.168.1.16     50159 20.62.59.38            443 Established
+192.168.1.16     49985 54.232.34.114          443 Established
+192.168.1.16     49958 104.18.32.115          443 Established
+192.168.1.16     49956 104.18.32.115          443 Established
+192.168.1.16     49682 57.144.114.145         443 Established
+192.168.1.16     49185 20.7.2.167             443 Established
+192.168.1.16     49180 20.127.250.238         443 Established
+192.168.1.16     49179 20.127.250.238         443 Established
+192.168.1.16     49161 20.62.59.38            443 Established
 ```
