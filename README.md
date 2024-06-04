@@ -22,3 +22,15 @@ completa.
 5.  Número de conexiones de red activas actualmente (en estado ESTABLISHED).
 
 # Ejemplos
+
+- Menú desplegado:
+  ```===================
+ Menu de Opciones 
+===================
+1. Desplegar los cinco procesos que más CPU estén consumiendo en ese momento.
+2. Desplegar los filesystems en la máquina. Incluir para cada filesystem su tamaño y la cantidad de espacio libre (en bytes).
+3. Desplegar el nombre y el tamaño del archivo más grande almacenado en un filesystem especificado.
+4. Cantidad de memoria libre y cantidad del espacio de swap en uso (en bytes y porcentaje).
+5. Número de conexiones de red activas actualmente (en estado ESTABLISHED o CONECTADO).
+0. Salir
+Seleccione una opción:```
