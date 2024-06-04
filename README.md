@@ -82,9 +82,9 @@ C:             254771793920         5824532480
 
 Bash:
 ```
-Ingrese el nombre del filesystem: yus
+Ingrese el nombre del filesystem: /dev/sda1
 Nombre del archivo                                                                                   Tamaño             
-/media/yus/VBox_GAs_7.0.14/VBoxWindowsAdditions-amd64.exe                                            15395       
+/usr/lib/firefox/libxul.so                                                                           139220     
 ```
 Powershell:
 ```
