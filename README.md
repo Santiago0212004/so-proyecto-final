@@ -24,7 +24,8 @@ completa.
 # Ejemplos
 
 - Menú desplegado:
-```===================```
+```
+===================
  Menu de Opciones 
 ===================
 1. Desplegar los cinco procesos que más CPU estén consumiendo en ese momento.
@@ -33,4 +34,5 @@ completa.
 4. Cantidad de memoria libre y cantidad del espacio de swap en uso (en bytes y porcentaje).
 5. Número de conexiones de red activas actualmente (en estado ESTABLISHED o CONECTADO).
 0. Salir
-Seleccione una opción:```
+Seleccione una opción:
+```
