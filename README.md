@@ -88,6 +88,8 @@ Nombre del archivo                                                              
 ```
 Powershell:
 ```
+Ingrese la ruta: C:/
+
 FullName                                                                 Length
 --------                                                                 ------
 C:\Users\yuste\VirtualBox VMs\DEVASC-LABVM\DEVASC-LABVM-disk001.vdi 13139705856
