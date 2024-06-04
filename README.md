@@ -24,7 +24,7 @@ completa.
 # Ejemplos
 
 - Menú desplegado:
-  ```===================
+```===================```
  Menu de Opciones 
 ===================
 1. Desplegar los cinco procesos que más CPU estén consumiendo en ese momento.
