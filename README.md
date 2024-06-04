@@ -94,4 +94,5 @@ unix  3      [ ]         SEQPACKET  CONECTADO     22522
 unix  3      [ ]         FLUJO      CONECTADO     22605    
 unix  3      [ ]         FLUJO      CONECTADO     20001    @/tmp/dbus-LkpiPQY5JD
 unix  3      [ ]         FLUJO      CONECTADO     18322    /var/run/dbus/system_bus_socket
+...
 ```
